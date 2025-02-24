@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero to Hero - JavaScript Course</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.1/framer-motion.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.4/babel.min.js"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState } = React;
+
+        function JavaScriptTheory() {
+            const [showHistory, setShowHistory] = useState(false);
+            const [showUsage, setShowUsage] = useState(false);
+
+            return (
+                <div className="min-h-screen bg-gray-100 p-6">
+                    <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6">
+                        <h1 className="text-4xl font-bold text-center text-gray-800">Zero to Hero: The Ultimate JavaScript Course - Part II</h1>
+                        <p className="text-md text-center text-gray-600 mt-2">Author: <span className="font-semibold">Pawan Yadav</span></p>
+                        
+                        <h2 className="text-3xl font-semibold text-gray-700 mt-6">Introduction to JS</h2>
+                        <h3 className="text-2xl font-semibold text-gray-600 mt-4">JavaScript Fundamentals</h3>
+                        <p className="mt-2 text-gray-700">JavaScript (JS) is a powerful, high-level, and versatile programming language used primarily for web development. But it can be used in almost all things!</p>
+                        <ul className="list-disc list-inside mt-2 text-gray-700">
+                            <li>Want to develop a desktop app? Use Electron.</li>
+                            <li>Want to develop a game? Use Three.js.</li>
+                            <li>JavaScript can do almost anything!</li>
+                        </ul>
+
+                        <h3 className="text-2xl font-semibold text-gray-600 mt-6">Key Features of JavaScript</h3>
+                        <ul className="list-disc list-inside mt-2 text-gray-700">
+                            <li>✔️ Interpreted Language – Runs directly in the browser.</li>
+                            <li>✔️ Cross-Platform – Works on multiple OS and devices.</li>
+                            <li>✔️ Dynamic Typing – No explicit type declarations needed.</li>
+                            <li>✔️ Prototype-Based OOP – Supports object-oriented programming.</li>
+                            <li>✔️ Event-Driven – Handles user interactions dynamically.</li>
+                            <li>✔️ Asynchronous Programming – Supports Promises & async/await.</li>
+                        </ul>
+
+                        <h3 className="text-2xl font-semibold text-gray-600 mt-6">Where is JavaScript Used?</h3>
+                        <button 
+                            className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                            onClick={() => setShowUsage(!showUsage)}
+                        >
+                            {showUsage ? "Hide" : "Show"} JavaScript Usage
+                        </button>
+                        {showUsage && (
+                            <ul className="list-decimal list-inside mt-2 text-gray-700">
+                                <li>Frontend Development (React.js, Vue.js, Angular)</li>
+                                <li>Backend Development (Node.js, Express.js)</li>
+                                <li>Full-Stack Development (MERN Stack)</li>
+                                <li>Mobile & Desktop Apps (React Native, Electron.js)</li>
+                                <li>Game Development (Three.js, Babylon.js)</li>
+                                <li>AI & Machine Learning (TensorFlow.js)</li>
+                            </ul>
+                        )}
+
+                        <h3 className="text-2xl font-semibold text-gray-600 mt-6">History & Evolution of JavaScript</h3>
+                        <button 
+                            className="mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+                            onClick={() => setShowHistory(!showHistory)}
+                        >
+                            {showHistory ? "Hide" : "Show"} JavaScript History
+                        </button>
+                        {showHistory && (
+                            <div className="mt-2 text-gray-700">
+                                <p>📜 JavaScript was created by Brendan Eich in 1995 at Netscape.</p>
+                                <p>💡 Originally named Mocha, then LiveScript, and later JavaScript.</p>
+                                <p>🚀 2009 - Node.js revolutionized JavaScript on the server-side.</p>
+                                <p>🔥 2015 - ES6 introduced modern features like let, const, arrow functions.</p>
+                                <p>🔮 2020+ - JavaScript continues to evolve with WebAssembly and AI integration.</p>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<JavaScriptTheory />);
+    </script>
+</body>
+</html>
