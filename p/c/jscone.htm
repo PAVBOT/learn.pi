@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero to Hero - JavaScript Course</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.1/framer-motion.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div id="root"></div>
+    
+    <script>
+        const { useState } = React;
+
+        function CoursePage() {
+            const [isOpen, setIsOpen] = useState(false);
+            
+            return (
+                React.createElement("div", { className: "p-6 max-w-2xl mx-auto bg-white rounded-lg shadow-lg text-center" },
+                    React.createElement("img", { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png", className: "w-24 mx-auto mb-4" }),
+                    React.createElement("h1", { className: "text-3xl font-bold mb-2" }, "Zero to Hero from Basics to Beyond: The Ultimate Course to JS!"),
+                    React.createElement("h2", { className: "text-xl font-semibold text-gray-700" }, "PART I"),
+                    React.createElement("h3", { className: "text-lg text-gray-600 mb-4" }, "Author: Pawan Yadav"),
+                    React.createElement("h2", { className: "text-xl font-bold mt-4" }, "OVERVIEW"),
+                    React.createElement("details", { className: "mt-2 bg-gray-100 p-4 rounded-lg" },
+                        React.createElement("summary", { className: "cursor-pointer text-lg font-semibold text-blue-600" }, "In this course"),
+                        React.createElement("p", { className: "text-left mt-2 text-gray-700 whitespace-pre-line" }, `📜 JavaScript Roadmap: Zero to Hero\n\nPublisher: Origin\nAuthor: Pawan Yadav (CEO, Powered Intelligence)\n\n1️⃣ JavaScript Fundamentals (Basics of JS)\n🔹 Introduction to JavaScript\n  - What is JavaScript?\n  - History & Evolution\n  - JavaScript in Browsers vs. Node.js\n🔹 Setting Up Your Environment\n  - Installing Node.js & NPM\n  - Choosing a Code Editor (VS Code, WebStorm, etc.)\n  - Running JavaScript in the Console\n🔹 Basic Syntax & Data Types\n  - console.log() & Debugging\n  - Variables: let, const, var\n  - Data Types: String, Number, Boolean, Null, Undefined\n  - Object, Array, Symbol, BigInt\n  - Operators & Expressions\n🔹 Working with Input & Output\n  - alert(), prompt(), confirm()\n  - Interacting with the Console\n\n... (Course continues with Advanced JavaScript, Async Programming, OOP, JSON, Security, and a Capstone Project)\n\n🔥 Final Project & Certification\n🎯 Capstone Project: Create a Full-Stack Web App using JavaScript\n🏆 Certificate of Completion`)
+                    ),
+                    React.createElement("a", { href: "./jsctwo.htm", className: "mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition" }, "Next Part")
+                )
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(CoursePage));
+    </script>
+</body>
+</html>
