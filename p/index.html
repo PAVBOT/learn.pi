@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn PI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div id="root"></div>
+    
+    <script>
+        const { useEffect, useState } = React;
+
+        function LandingPage() {
+            const [gradient, setGradient] = useState("bg-gradient-to-r from-purple-400 to-blue-500");
+
+            useEffect(() => {
+                const gradients = [
+                    "bg-gradient-to-r from-purple-400 to-blue-500",
+                    "bg-gradient-to-r from-blue-500 to-green-400",
+                    "bg-gradient-to-r from-green-400 to-yellow-400",
+                    "bg-gradient-to-r from-yellow-400 to-red-400"
+                ];
+                let index = 0;
+                const interval = setInterval(() => {
+                    index = (index + 1) % gradients.length;
+                    setGradient(gradients[index]);
+                }, 3000);
+                return () => clearInterval(interval);
+            }, []);
+
+            return (
+                React.createElement("div", { className: `min-h-screen flex flex-col items-center justify-center text-white transition-all duration-500 ${gradient}` },
+                    React.createElement("h1", { className: "text-5xl font-bold" }, "Learn.Pi"),
+                    React.createElement("p", { className: "mt-4 text-lg" }, "Free for all, learning is free to all!"),
+                    React.createElement("div", { className: "mt-24 text-center w-full max-w-2xl" },
+                        React.createElement("div", { className: "absolute top-5 left-5 bg-red-500 text-white px-4 py-1 rounded-lg text-sm font-bold" }, "NEW!"),
+                        React.createElement("h1", { className: "text-3xl font-bold" }, "Courses"),
+                        React.createElement("div", { className: "mt-4 p-6 bg-white text-black rounded-lg shadow-lg w-full" },
+                            React.createElement("h2", { className: "text-xl font-semibold" }, "Zero to Hero from Basics to Beyond: The Ultimate Course to JS!"),
+                            React.createElement("a", { href: "c/jscone.htm", className: "mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition" }, "Learn")
+                        )
+                    )
+                )
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(LandingPage));
+    </script>
+</body>
+</html>
